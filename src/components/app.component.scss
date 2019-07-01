@@ -1,0 +1,74 @@
+:host {
+  --item-width: 8em;
+  --skew-degree-x: 20deg;
+  --skew-degree-y: 5deg;
+  --background-color: #000;
+  --color: #575757;
+  --hover-background-color: var(--selectedColor);
+  --hover-color: white;
+  --shadow-x: 1.5em;
+  --shadow-y: 1em;
+  --selectedColor: rgb(29, 202, 255);
+}
+
+ul {
+  position: relative;
+  left:0;
+  padding: 0px;
+  z-index: 99;
+}
+
+.listItem {
+  margin-top: 10px;
+  background: var(--background-color);
+  color: var(--color);
+  text-align: center;
+  height: 2.5em;
+  width: var(--item-width);
+  vertical-align: middle;
+  line-height: 2.5em;
+  border-bottom: 1px solid #060606;
+  position: relative;
+  display: block;
+  text-decoration: none;
+  box-shadow: var(--shadow-x) var(--shadow-y) 0 #e1e1e1;
+  transition: all .20s linear;
+  cursor: pointer;
+
+  &:hover {
+    background: var(--hover-background-color);
+    color: var(--hover-color);
+    transform: translate(.9em, 0em);
+    transition: all .25s linear;
+    box-shadow: -1.5em 1em 0 #e1e1e1;
+  }
+}
+
+svg {
+  margin: 10px 10px;
+}
+
+.selected {
+  color: var(--selectedColor);
+  transform: translate(.9em, -.19em);
+}
+
+.selected:hover {
+  color: var(--hover-color);
+}
+
+// Animations
+
+.loop {
+  background: var(--hover-background-color);
+  color: var(--hover-color);
+  transform: translate(.9em, -.9em);
+  transition: all .25s linear;
+  box-shadow: -2em 2em 0 #e1e1e1;
+  animation: turner .4s infinite linear;
+}
+
+@keyframes turner{
+    from{  transform: rotateY(0deg)   }
+    to  {  transform: rotateY(360deg) }
+}
