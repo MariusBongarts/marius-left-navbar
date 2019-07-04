@@ -15,17 +15,18 @@ class AppComponent extends LitElement {
   selectedItem = 'Components';
 
   @property()
-  navigationItems = ['Home', 'Components', 'Documentation', 'Get started', 'Account'];
+  navItems = ['Home', 'Components', 'Documentation', 'Get started', 'Account'];
 
   getClassMap(item: string) {
     const classInfo = { listItem: true, selected: this.selectedItem === item };
     return classInfo;
   }
 
-  emit() {
+  emit(selectedItem: string) {
     console.log('Button clicked');
     this.dispatchEvent(
-      new CustomEvent('buttonClick', {
+      new CustomEvent('clicked', {
+        detail: selectedItem,
         bubbles: true
       })
     );
@@ -34,8 +35,13 @@ class AppComponent extends LitElement {
   render() {
     return html`
           <ul>
-            ${this.navigationItems.map(item => html`
-            <li @click=${() => this.selectedItem = item} class=${classMap(this.getClassMap(item))}>
+            ${this.navItems.map(item => html`
+            <li @click=${() => {
+              this.selectedItem = item;
+              this.emit(item);
+            }}
+
+              class=${classMap(this.getClassMap(item))}>
               ${item}
 
             </li>

@@ -1,36 +1,39 @@
 :host {
-  --item-width: 8em;
+  --item-width: 10em;
+  --item-height: 2.5em;
   --skew-degree-x: 20deg;
   --skew-degree-y: 5deg;
   --background-color: #000;
-  --color: #575757;
+  --color: #838383;
   --hover-background-color: var(--selectedColor);
   --hover-color: white;
   --shadow-x: 1.5em;
   --shadow-y: 1em;
   --selectedColor: rgb(29, 202, 255);
+  --position: absolute;
 }
 
 ul {
-  position: relative;
-  left:0;
+  position: var(--position);
+  margin: 0;
   padding: 0px;
+  list-style: none;
   z-index: 99;
 }
 
 .listItem {
   margin-top: 10px;
+  padding: 5px 10px;
   background: var(--background-color);
   color: var(--color);
   text-align: center;
-  height: 2.5em;
+  height: var(--item-height);
   width: var(--item-width);
-  vertical-align: middle;
   line-height: 2.5em;
   border-bottom: 1px solid #060606;
   position: relative;
-  display: block;
   text-decoration: none;
+  vertical-align: middle;
   box-shadow: var(--shadow-x) var(--shadow-y) 0 #e1e1e1;
   transition: all .20s linear;
   cursor: pointer;
