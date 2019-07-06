@@ -34,7 +34,7 @@ ul {
   position: relative;
   text-decoration: none;
   vertical-align: middle;
-  box-shadow: var(--shadow-x) var(--shadow-y) 0 #e1e1e1;
+  box-shadow: var(--shadow-x) var(--shadow-y) 0 #e1e1e150;
   transition: all .20s linear;
   cursor: pointer;
 
@@ -43,7 +43,7 @@ ul {
     color: var(--hover-color);
     transform: translate(.9em, 0em);
     transition: all .25s linear;
-    box-shadow: -1.5em 1em 0 #e1e1e1;
+    box-shadow: -1.5em 1em 0 #e1e1e150;
   }
 }
 

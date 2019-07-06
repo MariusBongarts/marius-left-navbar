@@ -23,7 +23,6 @@ class AppComponent extends LitElement {
   }
 
   emit(selectedItem: string) {
-    console.log('Button clicked');
     this.dispatchEvent(
       new CustomEvent('clicked', {
         detail: selectedItem,
